@@ -1,0 +1,42 @@
+<html>
+
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="scripts/movie-api.js"></script>
+        <style>
+            .image {
+                position: relative;
+                overflow: hidden;
+                padding-bottom: 100%;
+            }
+
+            .image img {
+                position: absolute;
+                max-width: 100%;
+                max-height: 100%;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h1>F</h1>
+                    <div class="image">
+                        <img class="img img-responsive full-width"
+                            src="https://image.cnbcfm.com/api/v1/image/105992231-1561667465295gettyimages-521697453.jpeg?v=1561667497&w=678&h=381">
+                    </div>
+                    <h2>Title</h2>
+
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
