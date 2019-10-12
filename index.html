@@ -1,6 +1,7 @@
 <html>
 
     <head>
+        <link rel="shortcut icon" href="favicon/favicon.ico">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -25,54 +26,56 @@
     </head>
 
     <body style="background-color: darkgray">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4"
-                    style="background-color:darkcyan; border-width: 8px; border-color: darkturquoise; border-style: outset">
-                    <div class="image">
-                        <img class="img img-responsive full-width"
-                            src="https://image.tmdb.org/t/p/w780/hO7KbdvGOtDdeg0W4Y5nKEHeDDh.jpg">
-                    </div>
-                    <div class="row">
-                        <h2 class="col-sm-9">Joker</h2>
-                        <h2 class="col-sm-3">8.8</h2>
-                    </div>
-                    <div class="row col-sm-12">
-                        <h3>Language: en</h3>
-                    </div>
+        <div id="list-container" class="container">
+            <template id="row-template">
+                <div class="row">
+                    <div class="col-sm-4"
+                        style="background-color:darkcyan; border-width: 8px; border-color: darkturquoise; border-style: outset">
+                        <div class="image">
+                            <img class="img img-responsive full-width"
+                                src="https://image.tmdb.org/t/p/w780/hO7KbdvGOtDdeg0W4Y5nKEHeDDh.jpg">
+                        </div>
+                        <div class="row">
+                            <h2 class="col-sm-9">Joker</h2>
+                            <h2 class="col-sm-3">8.8</h2>
+                        </div>
+                        <div class="row col-sm-12">
+                            <h3>Language: en</h3>
+                        </div>
 
-                </div>
-                <div class="col-sm-4"
-                    style="background-color:darkcyan; border-width: 8px; border-color: darkturquoise; border-style: outset">
-                    <div class="image">
-                        <img class="img img-responsive full-width"
-                            src="https://image.tmdb.org/t/p/w780/6X2YjjYcs8XyZRDmJAHNDlls7L4.jpg">
                     </div>
-                    <div class="row">
-                        <h2 class="col-sm-9">The Old Man & the Gun</h2>
-                        <h2 class="col-sm-3">6.3</h2>
-                    </div>
-                    <div class="row col-sm-12">
-                        <h3>Language: en</h3>
-                    </div>
+                    <div class="col-sm-4"
+                        style="background-color:darkcyan; border-width: 8px; border-color: darkturquoise; border-style: outset">
+                        <div class="image">
+                            <img class="img img-responsive full-width"
+                                src="https://image.tmdb.org/t/p/w780/6X2YjjYcs8XyZRDmJAHNDlls7L4.jpg">
+                        </div>
+                        <div class="row">
+                            <h2 class="col-sm-9">The Old Man & the Gun</h2>
+                            <h2 class="col-sm-3">6.3</h2>
+                        </div>
+                        <div class="row col-sm-12">
+                            <h3>Language: en</h3>
+                        </div>
 
-                </div>
-                <div class="col-sm-4"
-                    style="background-color:darkcyan; border-width: 8px; border-color: darkturquoise; border-style: outset">
-                    <div class="image">
-                        <img class="img img-responsive full-width"
-                            src="https://image.tmdb.org/t/p/w780/8moTOzunF7p40oR5XhlDvJckOSW.jpg">
                     </div>
-                    <div class="row">
-                        <h2 class="col-sm-9">It Chapter Two</h2>
-                        <h2 class="col-sm-3">7.1</h2>
-                    </div>
-                    <div class="row col-sm-12">
-                        <h3>Language: en</h3>
-                    </div>
+                    <div class="col-sm-4"
+                        style="background-color:darkcyan; border-width: 8px; border-color: darkturquoise; border-style: outset">
+                        <div class="image">
+                            <img class="img img-responsive full-width"
+                                src="https://image.tmdb.org/t/p/w780/8moTOzunF7p40oR5XhlDvJckOSW.jpg">
+                        </div>
+                        <div class="row">
+                            <h2 class="col-sm-9">It Chapter Two</h2>
+                            <h2 class="col-sm-3">7.1</h2>
+                        </div>
+                        <div class="row col-sm-12">
+                            <h3>Language: en</h3>
+                        </div>
 
+                    </div>
                 </div>
-            </div>
+            </template>
         </div>
     </body>
 
