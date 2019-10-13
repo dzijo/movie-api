@@ -1,34 +1,51 @@
-console.log("F");
 var api_key = "2628d67d7605e8187e3b28f7a28b220b";
 
 var data = "{}";
 
-
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = false;
-var response;
-
-xhr.addEventListener("readystatechange", function () {
-    if (this.readyState === this.DONE) {
-        console.log(this.responseText);
-        response = JSON.parse(this.responseText);
-    }
-});
-
-
-xhr.open("GET", "https://api.themoviedb.org/3/movie/popular?page=1&api_key=" + api_key);
-xhr.send(data);
+var response: any;
 
 var baseImageUrl = "https://image.tmdb.org/t/p/w780";
 
-window.onload = function () {
+window.onload = async function () {
     console.log("D!");
     var list_container = <HTMLElement>document.getElementById("list-container");
     if (list_container != null) {
         console.log("F!");
-        list_container.appendChild(this.makeMovie(this.response["results"][0]));
+        for (let i = 0; i < 48; i++) {
+            if (i % 20 == 0) {
+                await request(`https://api.themoviedb.org/3/movie/popular?page=${Math.floor(i / 20) + 1}&api_key=${api_key}`);
+                console.log(response);
+            }
+            var row;
+            if (i % 3 == 0) {
+                row = document.createElement('div');
+                row.setAttribute("class", "row");
+                list_container.appendChild(row);
+            }
+            if (row != undefined) {
+                row.appendChild(makeMovie(response["results"][i % 20]));
+            }
+        }
     }
 
+}
+
+function request(url: any) {
+    return new Promise(function (resolve, reject) {
+        const xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === this.DONE) {
+                console.log(this.responseText);
+                response = JSON.parse(this.responseText);
+            }
+        });
+        xhr.ontimeout = function () {
+            reject('timeout');
+        };
+        xhr.open('get', url, true);
+        xhr.send();
+    })
 }
 
 function makeMovie(data: any) {
