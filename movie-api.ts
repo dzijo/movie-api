@@ -3,7 +3,7 @@ var api_key = "2628d67d7605e8187e3b28f7a28b220b";
 var data = "{}";
 var i: number;
 
-const xhr = new XMLHttpRequest();
+var xhr = new XMLHttpRequest();
 xhr.withCredentials = false;
 
 xhr.addEventListener("readystatechange", function () {
@@ -106,6 +106,11 @@ function makeMovie(data: any) {
     box.appendChild(imageE);
     box.appendChild(tarE);
     box.appendChild(languageE);
+    box.setAttribute("id", id);
+    box.addEventListener("click", function () {
+        console.log(this.id);
+        window.open("/movie-display.html?id=" + this.id, "_self");
+    })
 
     return box;
 }
