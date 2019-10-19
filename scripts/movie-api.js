@@ -36,7 +36,7 @@ window.onload = function () {
     }
 };
 function makeMovie(data) {
-    let imagePath = baseImageUrl + data["poster_path"], id = data["id"], language = data["original_language"], title = data["title"], rating = data["vote_average"];
+    let imagePath = baseImageUrl + data["poster_path"], id = data["id"], language = data["original_language"], title = data["title"], rating = data["vote_average"], date = new Date(data["release_date"]);
     //Language
     let languageH = document.createElement('h3');
     languageH.innerText = `Language: ${language}`;
@@ -45,7 +45,7 @@ function makeMovie(data) {
     languageE.appendChild(languageH);
     //Title and rating
     let titleH = document.createElement('h2');
-    titleH.innerText = title;
+    titleH.innerText = `${title} (${date.getFullYear()})`;
     titleH.setAttribute("class", "col-sm-9");
     let ratingH = document.createElement('h2');
     ratingH.innerText = rating;
