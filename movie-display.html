@@ -6,6 +6,25 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="scripts/movie-display.js"></script>
+        <style>
+            .rating {
+                unicode-bidi: bidi-override;
+                direction: rtl;
+            }
+
+            .rating>span {
+                display: inline-block;
+                position: relative;
+                font-size: 250%;
+                width: 1.1em;
+            }
+
+            .rating>span:hover:before,
+            .rating>span:hover~span:before {
+                content: "\2605";
+                position: absolute;
+            }
+        </style>
     </head>
 
     <body style="background-color: darkgray">
@@ -14,15 +33,15 @@
                 <h2 class="col-md-12" id=title>Title</h2>
             </div>
             <div class="row">
-                <img class="col-md-12" id="poster" src="">
+                <img class="col-md-12 img img-responsive full-width" id="poster" src="">
             </div>
             <div class="row">
                 <p class="col-md-12" id="description">Lorem Ipsum</p>
             </div>
             <div class="row">
                 <h3 class="col-md-3" id="rating"><b>Rating: </b></h3>
-                <div class="col-md-offset-2 col-md-7" id="stars">
-                    <h3>FFAF</h3>
+                <div class="col-md-offset-2 col-md-7 rating" id="stars">
+                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
                 </div>
             </div>
             <div class="row">

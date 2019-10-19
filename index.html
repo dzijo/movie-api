@@ -31,67 +31,83 @@
                 margin-bottom: -99999px;
                 padding-bottom: 99999px;
             }
+
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 10;
+                padding-top: 5%;
+            }
+
+            .float {
+                position: fixed;
+                width: 60px;
+                height: 60px;
+                bottom: 40px;
+                right: 40px;
+                background-color: #0C9;
+                color: #FFF;
+                border-radius: 50px;
+                text-align: center;
+                box-shadow: 2px 2px 3px #999;
+                cursor: pointer;
+                z-index: 12;
+            }
+
+            .my-float {
+                margin-top: 22px;
+                display: inline-block;
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale
+            }
+
+            .dialog-box-container {
+                background: white;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 20%;
+                padding: 1% 1% 2% 2%;
+                border-width: 2px;
+                border-color: black;
+                border-style: solid
+            }
+
+            .radio-button {
+                padding-left: 2%;
+            }
         </style>
     </head>
 
     <body style="background-color: darkgray">
-        <div id="list-container" class="container">
-            <template id="row-template">
-                <div class="row">
-                    <div class="col-sm-4"
-                        style="background-color:darkcyan; border-width: 8px; border-color: darkturquoise; border-style: outset">
-                        <div class="image">
-                            <img class="img img-responsive full-width"
-                                src="https://image.tmdb.org/t/p/w780/hO7KbdvGOtDdeg0W4Y5nKEHeDDh.jpg">
-                        </div>
-                        <div class="row">
-                            <h2 class="col-sm-9">Joker</h2>
-                            <h2 class="col-sm-3">8.8</h2>
-                        </div>
-                        <div class="row col-sm-12">
-                            <h3>Language: en</h3>
-                        </div>
-
-                    </div>
-                    <div class="col-sm-4"
-                        style="background-color:darkcyan; border-width: 8px; border-color: darkturquoise; border-style: outset">
-                        <div class="image">
-                            <img class="img img-responsive full-width"
-                                src="https://image.tmdb.org/t/p/w780/6X2YjjYcs8XyZRDmJAHNDlls7L4.jpg">
-                        </div>
-                        <div class="row">
-                            <h2 class="col-sm-9">The Old Man & the Gun</h2>
-                            <h2 class="col-sm-3">6.3</h2>
-                        </div>
-                        <div class="row col-sm-12">
-                            <h3>Language: en</h3>
-                        </div>
-
-                    </div>
-                    <div class="col-sm-4"
-                        style="background-color:darkcyan; border-width: 8px; border-color: darkturquoise; border-style: outset">
-                        <div class="image">
-                            <img class="img img-responsive full-width"
-                                src="https://image.tmdb.org/t/p/w780/8moTOzunF7p40oR5XhlDvJckOSW.jpg">
-                        </div>
-                        <div class="row">
-                            <h2 class="col-sm-9">It Chapter Two</h2>
-                            <h2 class="col-sm-3">7.1</h2>
-                        </div>
-                        <div class="row col-sm-12">
-                            <h3>Language: en</h3>
-                        </div>
-
-                    </div>
+        <div id="genre-dialog-box" class="overlay" style="visibility: hidden;">
+            <div class="dialog-box-container">
+                <h2>Movie Roulette</h2>
+                <hr>
+                <p>Select genre:</p>
+                <form>
+                </form>
+                <div class="text-center">
+                    <button style="width: 80%" id="button-roll" type="button" class="btn btn-primary">Roll</button>
                 </div>
-            </template>
+            </div>
+        </div>
+        <div id="list-container" class="container">
         </div>
         <div class="row">
             <div class="text-center">
-                <button id="buttonLoad" type="button" class="btn btn-primary">Load</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Roulette</button>
+                <button id="button-load" type="button" class="btn btn-primary">Load</button>
             </div>
         </div>
+        <a id="button-roulette" class="float">
+            <i class="my-float">Roulette</i>
+        </a>
     </body>
 
 </html>
