@@ -59,6 +59,7 @@ function makeMovie(data) {
     image.setAttribute("class", "img img-responsive full-width");
     image.setAttribute("src", imagePath);
     image.style.cursor = "pointer";
+    image.style.borderRadius = "10px";
     image.addEventListener("click", function () {
         if (this.parentElement !== null) {
             if (this.parentElement.parentElement !== null) {
@@ -71,7 +72,7 @@ function makeMovie(data) {
     imageE.appendChild(image);
     let box = document.createElement('div');
     box.setAttribute("class", "col-sm-4");
-    box.setAttribute("style", "background-color:darkcyan; border-width: 8px; border-color: darkturquoise; border-style: outset");
+    box.setAttribute("style", "background-color: #2B2D42; border-width: 8px; border-color: #3E4053; border-style: outset; color: #8D99AE;");
     box.appendChild(imageE);
     box.appendChild(tarE);
     box.appendChild(languageE);
