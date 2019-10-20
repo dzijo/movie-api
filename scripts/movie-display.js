@@ -9,7 +9,7 @@ var xhr = new XMLHttpRequest();
 xhr.withCredentials = false;
 xhr.addEventListener("readystatechange", function () {
     if (this.readyState === this.DONE) {
-        console.log(this.responseText);
+        //console.log(this.responseText);
         response = JSON.parse(this.responseText);
     }
 });
