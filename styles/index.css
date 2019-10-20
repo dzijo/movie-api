@@ -67,7 +67,10 @@
     padding: 1% 1% 2% 2%;
     border-width: 2px;
     border-color: black;
-    border-style: solid
+    border-style: solid;
+    overflow-y: scroll;
+    max-height: 80%;
+    overflow-y: auto;
 }
 
 .radio-button {
